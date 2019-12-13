@@ -11,33 +11,58 @@
     cursor: pointer;
 
     .modal-container {
-        position: relative;
-        min-height: 400px;
-        min-width: 250px;
-        height: 70vh;
-        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+        width: 250px;
         background: var(--color-background);
         border-radius: 4px;
         cursor: auto;
-        overflow: hidden;
+        padding: 16px;
 
-        .close-btn {
-            position: absolute;
-            top: 0;
-            right: 0;
-            height: 30px;
-            width: 40px;
-            background: var(--color-danger);
-            border: none;
-            border-radius: 0 0 0 4px;
-            font-size: 20px;
-            color: #fff;
+        .header-btns {
+            display: flex;
+            justify-content: space-between;
+        }
 
-            &:focus {
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin: 16px 0px;
+
+            .form-input {
+                height: 50px;
+                width: 100%;
+                text-align: center;
+                box-sizing: border-box;
+                background: var(--color-input);
                 outline: none;
+
+                &:disabled {
+                    background: var(--color-input-disabled);
+                }
             }
-            &:active {
-                background: rgba(var(--color-danger-rgb), 0.8);
+
+            .error-message {
+                visibility: hidden;
+                color: var(--color-danger);
+                text-align: center;
+                height: 20px;
+
+                &.show {
+                    visibility: visible;
+                }
+            }
+        }
+
+        .footer-btns {
+            display: flex;
+
+            .footer-btn {
+                flex: 1;
+                height: 30px
             }
         }
     }

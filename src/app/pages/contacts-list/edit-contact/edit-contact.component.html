@@ -1,5 +1,50 @@
 <div *ngIf="modalShowing" class='modal-blocker' (click)="closeModal()">
     <div class='modal-container' (click)=modalClicked($event)>
-        <button class='close-btn' (click)="closeModal()">X</button>
+
+        <div class='header-btns'>
+            <div class="icon delete"></div>
+            <div
+                class='icon favorite'
+                [class.selected]="isFavorite"
+                (click)="toggleFavorite()"
+            ></div>
+        </div>
+
+        <form [formGroup]="contactForm" class='form'>
+            <input
+                type="text"
+                placeholder="Name"
+                formControlName="name"
+                class='form-input'
+                [attr.disabled]="formDisabled ? '' : null"
+            >
+            <div class='error-message' [class.show]='name.dirty && name.invalid'>Name required</div>
+            <input
+                type="email"
+                placeholder="Email"
+                formControlName="email"
+                class='form-input'
+                [attr.disabled]="formDisabled ? '' : null"
+            >
+            <div
+                class='error-message'
+                [class.show]='email.dirty && email.invalid'
+            >
+                {{ email.errors['required'] ? 'Email required' : 'Invalid email' }}
+            </div>
+            <input
+                type="tel"
+                placeholder="Phone"
+                formControlName="phone"
+                class='form-input'
+                [attr.disabled]="formDisabled ? '' : null"
+            >
+        </form>
+
+        <div class='footer-btns'>
+            <button class='footer-btn'(click)="closeModal()">Close</button>
+            <button class='footer-btn primary' (click)="onEdit()">Edit</button>
+        </div>
+
     </div>
 </div>

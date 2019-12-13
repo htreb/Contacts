@@ -5,4 +5,21 @@
     --color-danger-rgb: 255, 20, 20;
     --color-background: #efefef;
     --color-background-rgb: 239, 239, 239;
+    --color-input: #fff;
+    --color-input-disabled: #bbb;
+}
+
+.icon {
+    height: 35px;
+    width: 35px;
+
+    &.delete {
+        background-image: url(./assets/icons/trash.svg);
+    }
+    &.favorite {
+        background-image: url(./assets/icons/star-outline.svg);
+        &.selected {
+            background-image: url(./assets/icons/star.svg);
+        }
+    }
 }
