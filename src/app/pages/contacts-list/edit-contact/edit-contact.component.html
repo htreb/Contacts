@@ -1,1 +1,5 @@
-<p>edit-contact works!</p>
+<div *ngIf="modalShowing" class='modal-blocker' (click)="closeModal()">
+    <div class='modal-container' (click)=modalClicked($event)>
+        <button class='close-btn' (click)="closeModal()">X</button>
+    </div>
+</div>
