@@ -16,7 +16,7 @@
         min-width: 250px;
         height: 70vh;
         width: 50vw;
-        background: #eee;
+        background: var(--color-background);
         border-radius: 4px;
         cursor: auto;
         overflow: hidden;
@@ -27,7 +27,7 @@
             right: 0;
             height: 30px;
             width: 40px;
-            background: #f00;
+            background: var(--color-danger);
             border: none;
             border-radius: 0 0 0 4px;
             font-size: 20px;
@@ -37,7 +37,7 @@
                 outline: none;
             }
             &:active {
-                background: #f66;
+                background: rgba(var(--color-danger-rgb), 0.8);
             }
         }
     }
