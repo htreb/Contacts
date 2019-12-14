@@ -6,7 +6,11 @@
     padding: 16px;
     cursor: pointer;
 
-    .name {
-        font-size: 2em;
+    .details {
+        word-break: break-word;
+
+        .name {
+            font-size: 2em;
+        }
     }
 }
