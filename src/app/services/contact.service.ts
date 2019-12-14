@@ -20,7 +20,10 @@ export class ContactService {
   }
 
   getContacts(): Contact[] {
-    return JSON.parse(localStorage.getItem('contacts')) || [];
+    const allContacts: Contact[] = JSON.parse(localStorage.getItem('contacts')) || [];
+    return allContacts.sort((a, b) => {
+      return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1;
+    });
   }
 
   getFavorites(): Contact[] {
