@@ -2,7 +2,7 @@
 
 
 <app-contact-list-item
-    *ngFor="let contact of allContacts"
+    *ngFor="let contact of contactService.allContacts$ | async"
     [contact]='contact'
     (click)="openEditContactModal(contact)"
 ></app-contact-list-item>

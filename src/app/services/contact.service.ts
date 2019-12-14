@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 export interface Contact {
   isFavorite: boolean;
@@ -13,25 +14,26 @@ export interface Contact {
 })
 export class ContactService {
 
-  constructor() { }
+  public allContacts$ = new BehaviorSubject<Contact[]>([]);
+
+  constructor() {
+    this.updateContactBehaviorSubject();
+  }
 
   getId(): string {
     return `${(Math.random() + '').substr(2)}X${new Date().getTime()}`;
   }
 
-  getContacts(): Contact[] {
+  updateContactBehaviorSubject(): void {
     const allContacts: Contact[] = JSON.parse(localStorage.getItem('contacts')) || [];
-    return allContacts.sort((a, b) => {
+    const orderedContacts: Contact[] = allContacts.sort((a, b) => {
       return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1;
     });
-  }
-
-  getFavorites(): Contact[] {
-    return this.getContacts().filter(c => c.isFavorite);
+    this.allContacts$.next(orderedContacts);
   }
 
   saveContact(contact: Contact): void {
-    let contacts: Contact[] = this.getContacts();
+    let contacts: Contact[] = this.allContacts$.value;
     if (contact.id) {
       // if we are editing a contact which already exists, then do not duplicate it.
       contacts = contacts.filter(c => c.id !== contact.id);
@@ -39,13 +41,15 @@ export class ContactService {
       contact.id = this.getId();
     }
     contacts.push(contact);
-    return localStorage.setItem('contacts', JSON.stringify(contacts));
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+    this.updateContactBehaviorSubject();
   }
 
   deleteContact(contact: Contact): void {
     if (contact.id) {
-      const contacts: Contact[] = this.getContacts().filter(c => c.id !== contact.id);
-      return localStorage.setItem('contacts', JSON.stringify(contacts));
+      const contacts: Contact[] = this.allContacts$.value.filter(c => c.id !== contact.id);
+      localStorage.setItem('contacts', JSON.stringify(contacts));
+      this.updateContactBehaviorSubject();
     }
   }
 

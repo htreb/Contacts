@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { EditContactComponent } from './edit-contact/edit-contact.component';
 import { ContactService, Contact } from 'src/app/services/contact.service';
 @Component({
@@ -6,16 +6,11 @@ import { ContactService, Contact } from 'src/app/services/contact.service';
   templateUrl: './contacts-list.component.html',
   styleUrls: ['./contacts-list.component.scss']
 })
-export class ContactsListComponent implements OnInit {
+export class ContactsListComponent {
 
   @ViewChild(EditContactComponent, { static: false }) editContactModal: EditContactComponent;
-  public allContacts: Contact[];
 
-  constructor(private contactService: ContactService) { }
-
-  ngOnInit(): void {
-    this.allContacts = this.contactService.getContacts();
-  }
+  constructor(public contactService: ContactService) { }
 
   openEditContactModal(contact?: Contact): void {
     this.editContactModal.openModal(contact);
