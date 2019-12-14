@@ -12,6 +12,10 @@
 .icon {
     height: 35px;
     width: 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    flex-shrink: 0;
 
     &.delete {
         background-image: url(./assets/icons/trash.svg);
