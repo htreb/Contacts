@@ -1,6 +1,6 @@
 :root {
-    --color-primary: #2e8b57;
-    --color-primary-rgb: 46, 139, 87;
+    --color-primary: #3E6259;
+    --color-primary-rgb: 62, 98, 89;
     --color-danger: #b00020;
     --color-danger-rgb: 255, 20, 20;
     --color-background: #efefef;
@@ -26,4 +26,34 @@
             background-image: url(./assets/icons/star.svg);
         }
     }
+}
+
+button {
+    padding: 16px;
+    border: none;
+    border-radius: 4px;
+    background: var(--color-primary);
+    color: var(--color-background);
+    text-transform: uppercase;
+
+    &:focus {
+        outline: none;
+    }
+    &:active {
+        background: rgba(var(--color-primary-rgb), 0.8);
+    }
+    &:disabled {
+        background: rgba(var(--color-primary-rgb), 0.6);
+    }
+
+    &.secondary {
+        background: var(--color-background);
+        border: 3px solid var(--color-primary);
+        color: var(--color-primary);
+    }
+}
+
+input {
+    border: none;
+    border-radius: 4px;
 }

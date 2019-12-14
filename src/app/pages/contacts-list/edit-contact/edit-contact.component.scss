@@ -13,7 +13,6 @@
     .modal-container {
         display: flex;
         flex-direction: column;
-        height: 300px;
         width: 250px;
         background: var(--color-background);
         border-radius: 4px;
@@ -63,7 +62,7 @@
 
             .footer-btn {
                 flex: 1;
-                height: 30px
+                margin: 5px;
             }
         }
     }

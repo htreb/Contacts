@@ -6,15 +6,14 @@
 </ng-template>
 
 <div class='contacts-list-container'>
-    <button (click)="openEditContactModal()">New contact</button>
 
     <div class='title'>Favorites</div>
     <ng-container *ngIf="contactService.favoriteContacts$ | async as favorites">
         <div *ngIf="favorites.length; else noFavorites" class='favorites-list' >
             <app-contact-list-item
-                *ngFor="let favorite of contactService.favoriteContacts$ | async"
-                [contact]='favorite'
-                (click)="openEditContactModal(favorite)"
+            *ngFor="let favorite of contactService.favoriteContacts$ | async"
+            [contact]='favorite'
+            (click)="openEditContactModal(favorite)"
             ></app-contact-list-item>
         </div>
     </ng-container>
@@ -23,13 +22,14 @@
     <ng-container *ngIf="contactService.allContacts$ | async as allContacts">
         <div *ngIf="allContacts.length; else noContacts" class='all-contacts-list'>
             <app-contact-list-item
-                *ngFor="let contact of contactService.allContacts$ | async"
-                [contact]='contact'
-                (click)="openEditContactModal(contact)"
+            *ngFor="let contact of contactService.allContacts$ | async"
+            [contact]='contact'
+            (click)="openEditContactModal(contact)"
             ></app-contact-list-item>
         </div>
     </ng-container>
 
 </div>
 
+<button class="new-contact" (click)="openEditContactModal()">+</button>
 <app-edit-contact></app-edit-contact>

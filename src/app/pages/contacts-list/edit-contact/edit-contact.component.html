@@ -41,10 +41,13 @@
         </form>
 
         <div class='footer-btns'>
-            <button class='footer-btn'(click)="closeModal()">Close</button>
+            <button
+                class='footer-btn secondary'
+                (click)="closeModal()"
+            >Close</button>
             <button
                 *ngIf="formDisabled"
-                class='footer-btn primary'
+                class='footer-btn'
                 (click)="onEdit()"
             >Edit</button>
             <button
