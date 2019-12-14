@@ -51,12 +51,16 @@ export class EditContactComponent implements OnInit {
   }
 
   openModal(contact?: Contact): void {
-    this.contactForm.setValue(contact);
+    if (contact) {
+      this.contactForm.setValue(contact);
+    }
     this.modalShowing = true;
   }
 
   closeModal(): void {
     this.modalShowing = false;
+    this.formDisabled = true;
+    this.contactForm.reset();
   }
 
   modalClicked(ev: MouseEvent): void {
