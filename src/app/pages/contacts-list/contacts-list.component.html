@@ -1,10 +1,20 @@
 <div class='contacts-list-container'>
     <button (click)="openEditContactModal()">New contact</button>
-    <app-contact-list-item
-        *ngFor="let contact of contactService.allContacts$ | async"
-        [contact]='contact'
-        (click)="openEditContactModal(contact)"
-    ></app-contact-list-item>
+
+    <div class='favorites-list'>
+        <app-contact-list-item
+            *ngFor="let contact of contactService.favoriteContacts$ | async"
+            [contact]='contact'
+            (click)="openEditContactModal(contact)"
+        ></app-contact-list-item>
+    </div>
+    <div class='all-contacts-list'>
+        <app-contact-list-item
+            *ngFor="let contact of contactService.allContacts$ | async"
+            [contact]='contact'
+            (click)="openEditContactModal(contact)"
+        ></app-contact-list-item>
+    </div>
 </div>
 
 <app-edit-contact></app-edit-contact>
