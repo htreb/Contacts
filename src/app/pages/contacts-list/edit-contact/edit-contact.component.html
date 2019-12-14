@@ -2,7 +2,7 @@
     <div class='modal-container' (click)=modalClicked($event)>
         <form [formGroup]="contactForm" class='form'>
             <div class='header-btns'>
-                <div class="icon delete"></div>
+                <div class="icon delete" (click)="deleteContact()"></div>
                 <div
                     class='icon favorite'
                     [class.selected]="isFavorite.value"

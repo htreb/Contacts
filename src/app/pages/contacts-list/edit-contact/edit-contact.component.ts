@@ -78,6 +78,15 @@ export class EditContactComponent implements OnInit {
     }
   }
 
+  deleteContact() {
+    if (this.formDisabled) {
+      return;
+    } else {
+      this.contactService.deleteContact(this.contactForm.value);
+      this.closeModal();
+    }
+  }
+
   onEdit(): void {
     this.formDisabled = false;
   }
