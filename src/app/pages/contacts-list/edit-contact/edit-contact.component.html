@@ -30,7 +30,7 @@
                 class='error-message'
                 [class.show]='email.dirty && email.invalid'
             >
-                {{ email.errors['required'] ? 'Email required' : 'Invalid email' }}
+                {{ email.errors && email.errors['required'] ? 'Email required' : 'Invalid email' }}
             </div>
             <input
                 type="tel"
