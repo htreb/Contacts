@@ -17,7 +17,7 @@ export class ContactsListComponent implements OnInit {
     this.allContacts = this.contactService.getContacts();
   }
 
-  openEditContactModal(): void {
-    this.editContactModal.openModal();
+  openEditContactModal(contact?: Contact): void {
+    this.editContactModal.openModal(contact);
   }
 }

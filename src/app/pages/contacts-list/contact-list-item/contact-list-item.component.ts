@@ -12,7 +12,9 @@ export class ContactListItemComponent {
 
   constructor(private contactService: ContactService) { }
 
-  onFavoriteClicked() {
+  onFavoriteClicked(ev: MouseEvent) {
+    ev.stopPropagation();
+    ev.preventDefault();
     this.contactService.toggleFavorite(this.contact);
   }
 }

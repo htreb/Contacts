@@ -5,7 +5,7 @@ import {
   FormBuilder,
   AbstractControl
 } from '@angular/forms';
-import { ContactService } from 'src/app/services/contact.service';
+import { ContactService, Contact } from 'src/app/services/contact.service';
 @Component({
   selector: 'app-edit-contact',
   templateUrl: './edit-contact.component.html',
@@ -50,7 +50,8 @@ export class EditContactComponent implements OnInit {
     return this.contactForm.get('isFavorite');
   }
 
-  openModal(): void {
+  openModal(contact?: Contact): void {
+    this.contactForm.setValue(contact);
     this.modalShowing = true;
   }
 
