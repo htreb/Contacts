@@ -64,9 +64,13 @@ export class EditContactComponent implements OnInit {
   }
 
   toggleFavorite(): void {
-    this.contactForm.patchValue({
-      isFavorite: !this.isFavorite.value
-    });
+    if (this.formDisabled) {
+      return;
+    } else {
+      this.contactForm.patchValue({
+        isFavorite: !this.isFavorite.value
+      });
+    }
   }
 
   onEdit(): void {
