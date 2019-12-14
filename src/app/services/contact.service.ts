@@ -45,4 +45,9 @@ export class ContactService {
       return localStorage.setItem('contacts', JSON.stringify(contacts));
     }
   }
+
+  toggleFavorite(contact: Contact): void {
+    contact.isFavorite = !contact.isFavorite;
+    this.saveContact(contact);
+  }
 }

@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ContactsListComponent } from './contacts-list.component';
 import { EditContactComponent } from './edit-contact/edit-contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ContactListItemComponent } from './contact-list-item/contact-list-item.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ContactsListComponent,
-    EditContactComponent
+    EditContactComponent,
+    ContactListItemComponent
   ],
   imports: [
     CommonModule,

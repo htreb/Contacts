@@ -1,0 +1,11 @@
+.contact-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid;
+    padding: 16px;
+
+    .name {
+        font-size: 2em;
+    }
+}
