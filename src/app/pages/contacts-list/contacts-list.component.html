@@ -1,2 +1,6 @@
 <button (click)="openEditContactModal()">New contact</button>
+
+
+<app-contact-list-item *ngFor="let contact of allContacts" [contact]='contact'></app-contact-list-item>
+
 <app-edit-contact></app-edit-contact>
