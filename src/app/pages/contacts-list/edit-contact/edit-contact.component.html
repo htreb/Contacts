@@ -1,16 +1,15 @@
 <div *ngIf="modalShowing" class='modal-blocker' (click)="closeModal()">
     <div class='modal-container' (click)=modalClicked($event)>
-
-        <div class='header-btns'>
-            <div class="icon delete"></div>
-            <div
-                class='icon favorite'
-                [class.selected]="isFavorite"
-                (click)="toggleFavorite()"
-            ></div>
-        </div>
-
         <form [formGroup]="contactForm" class='form'>
+            <div class='header-btns'>
+                <div class="icon delete"></div>
+                <div
+                    class='icon favorite'
+                    [class.selected]="isFavorite.value"
+                    (click)="toggleFavorite()"
+                ></div>
+            </div>
+
             <input
                 type="text"
                 placeholder="Name"
@@ -43,7 +42,17 @@
 
         <div class='footer-btns'>
             <button class='footer-btn'(click)="closeModal()">Close</button>
-            <button class='footer-btn primary' (click)="onEdit()">Edit</button>
+            <button
+                *ngIf="formDisabled"
+                class='footer-btn primary'
+                (click)="onEdit()"
+            >Edit</button>
+            <button
+                *ngIf="!formDisabled"
+                [attr.disabled]="contactForm.invalid ? '' : null"
+                class='footer-btn'
+                (click)="onSave()"
+            >Save</button>
         </div>
 
     </div>

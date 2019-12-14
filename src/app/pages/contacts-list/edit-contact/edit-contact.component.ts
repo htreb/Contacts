@@ -3,7 +3,6 @@ import {
   Validators,
   FormGroup,
   FormBuilder,
-  FormControl,
   AbstractControl
 } from '@angular/forms';
 @Component({
@@ -15,13 +14,13 @@ export class EditContactComponent implements OnInit {
 
   public modalShowing = false;
   public formDisabled = true;
-  public isFavorite = false;
   public contactForm: FormGroup;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.contactForm = this.fb.group({
+      isFavorite: [false],
       name: ['', [Validators.required]],
       email: [
         '',
@@ -30,7 +29,8 @@ export class EditContactComponent implements OnInit {
           Validators.email
         ]
       ],
-      phone: [''],
+      phone: [],
+      id: [],
     });
   }
 
@@ -40,6 +40,10 @@ export class EditContactComponent implements OnInit {
 
   get email(): AbstractControl {
     return this.contactForm.get('email');
+  }
+
+  get isFavorite(): AbstractControl {
+    return this.contactForm.get('isFavorite');
   }
 
   openModal(): void {
@@ -56,10 +60,20 @@ export class EditContactComponent implements OnInit {
   }
 
   toggleFavorite(): void {
-    this.isFavorite = !this.isFavorite;
+    this.contactForm.patchValue({
+      isFavorite: !this.isFavorite.value
+    });
   }
 
   onEdit(): void {
-    this.formDisabled = !this.formDisabled;
+    this.formDisabled = false;
+  }
+
+  onSave(): void {
+    if (this.contactForm.invalid) {
+      return;
+    } else {
+      this.closeModal();
+    }
   }
 }
