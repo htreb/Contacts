@@ -5,6 +5,7 @@ import {
   FormBuilder,
   AbstractControl
 } from '@angular/forms';
+import { ContactService } from 'src/app/services/contact.service';
 @Component({
   selector: 'app-edit-contact',
   templateUrl: './edit-contact.component.html',
@@ -16,7 +17,10 @@ export class EditContactComponent implements OnInit {
   public formDisabled = true;
   public contactForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private contactService: ContactService
+    ) { }
 
   ngOnInit(): void {
     this.contactForm = this.fb.group({
@@ -73,6 +77,7 @@ export class EditContactComponent implements OnInit {
     if (this.contactForm.invalid) {
       return;
     } else {
+      this.contactService.saveContact(this.contactForm.value);
       this.closeModal();
     }
   }
