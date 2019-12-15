@@ -5,11 +5,12 @@
 
     .title {
         font-size: 3em;
+        opacity: 0.2;
     }
 
     .favorites-list {
-        border-bottom: 5px solid;
         margin-bottom: 50px;
+        background: var(--color-secondary);
     }
 
     .empty-list {

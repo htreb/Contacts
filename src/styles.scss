@@ -1,12 +1,13 @@
 :root {
-    --color-primary: #3E6259;
-    --color-primary-rgb: 62, 98, 89;
+    --color-primary: #1DC6A5;
+    --color-secondary: #240B36;
     --color-danger: #b00020;
-    --color-danger-rgb: 255, 20, 20;
-    --color-background: #efefef;
-    --color-background-rgb: 239, 239, 239;
-    --color-input: #fff;
-    --color-input-disabled: #bbb;
+    --color-background: #14061E;
+    --color-input: #bbb;
+    --color-text: #ddd;
+
+    background: var(--color-background);
+    color: var(--color-text);
 }
 
 .icon {
@@ -16,6 +17,7 @@
     background-position: center;
     background-size: contain;
     flex-shrink: 0;
+    cursor: pointer;
 
     &.delete {
         background-image: url(./assets/icons/trash.svg);
@@ -35,19 +37,20 @@ button {
     background: var(--color-primary);
     color: var(--color-background);
     text-transform: uppercase;
+    cursor: pointer;
 
     &:focus {
         outline: none;
     }
-    &:active {
-        background: rgba(var(--color-primary-rgb), 0.8);
+    &:active, &:disabled {
+        opacity: 0.6;
     }
     &:disabled {
-        background: rgba(var(--color-primary-rgb), 0.6);
+        cursor: initial;
     }
 
     &.secondary {
-        background: var(--color-background);
+        background: initial;
         border: 3px solid var(--color-primary);
         color: var(--color-primary);
     }
@@ -56,4 +59,15 @@ button {
 input {
     border: none;
     border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    background: var(--color-input);
+    color: var(--color-background);
+
+    &:disabled {
+        opacity: 0.5;
+    }
 }

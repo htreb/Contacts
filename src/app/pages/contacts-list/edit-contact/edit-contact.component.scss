@@ -4,7 +4,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.9);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,7 +14,7 @@
         display: flex;
         flex-direction: column;
         width: 250px;
-        background: var(--color-background);
+        background: var(--color-secondary);
         border-radius: 4px;
         cursor: auto;
         padding: 16px;
@@ -23,6 +23,10 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 16px;
+
+            &.disabled {
+                opacity: 0.5;
+            }
         }
 
 
@@ -31,24 +35,12 @@
             flex-direction: column;
             flex: 1;
 
-            .form-input {
-                height: 50px;
-                width: 100%;
-                text-align: center;
-                box-sizing: border-box;
-                background: var(--color-input);
-                outline: none;
-
-                &:disabled {
-                    background: var(--color-input-disabled);
-                }
-            }
-
             .error-message {
                 visibility: hidden;
                 color: var(--color-danger);
                 text-align: center;
-                height: 20px;
+                height: 30px;
+                margin: 5px;
 
                 &.show {
                     visibility: visible;

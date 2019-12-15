@@ -1,7 +1,7 @@
 <div *ngIf="modalShowing" class='modal-blocker' (click)="closeModal()">
     <div class='modal-container' (click)=modalClicked($event)>
         <form [formGroup]="contactForm" class='form'>
-            <div class='header-btns'>
+            <div class='header-btns' [class.disabled]='formDisabled'>
                 <div class="icon delete" (click)="deleteContact()"></div>
                 <div
                     class='icon favorite'
@@ -14,15 +14,14 @@
                 type="text"
                 placeholder="Name"
                 formControlName="name"
-                class='form-input'
                 [attr.disabled]="formDisabled ? '' : null"
+                autofocus
             >
             <div class='error-message' [class.show]='name.dirty && name.invalid'>Name required</div>
             <input
                 type="email"
                 placeholder="Email"
                 formControlName="email"
-                class='form-input'
                 [attr.disabled]="formDisabled ? '' : null"
             >
             <div
@@ -35,7 +34,6 @@
                 type="tel"
                 placeholder="Phone"
                 formControlName="phone"
-                class='form-input'
                 [attr.disabled]="formDisabled ? '' : null"
             >
         </form>
