@@ -5,9 +5,10 @@
     <div class='empty-list'>You don't have any Contacts yet</div>
 </ng-template>
 
+
 <div class='contacts-list-container'>
 
-    <div class='title'>Favorites</div>
+    <div class='title' (dblclick)="contactService.mockContacts()">Favorites</div>
     <ng-container *ngIf="contactService.favoriteContacts$ | async as favorites">
         <div *ngIf="favorites.length; else noFavorites" class='favorites-list' >
             <app-contact-list-item

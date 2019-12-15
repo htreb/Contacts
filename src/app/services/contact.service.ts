@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { mockContacts } from './mockContacts';
 
 export interface Contact {
   isFavorite: boolean;
@@ -58,5 +59,10 @@ export class ContactService {
   toggleFavorite(contact: Contact): void {
     contact.isFavorite = !contact.isFavorite;
     this.saveContact(contact);
+  }
+
+  mockContacts() {
+    localStorage.setItem('contacts', JSON.stringify(mockContacts));
+    this.updateContactBehaviorSubject();
   }
 }
