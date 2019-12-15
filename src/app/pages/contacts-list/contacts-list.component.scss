@@ -3,6 +3,17 @@
     margin: auto;
     padding: 40px;
 
+    .search-box {
+        margin: 50px 0px;
+        font-size: 2em;
+        display: flex;
+        background: var(--color-input);
+
+        .clear-search {
+            background: initial;
+        }
+    }
+
     .title {
         font-size: 3em;
         opacity: 0.2;
