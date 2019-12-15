@@ -16,7 +16,6 @@ export interface Contact {
 export class ContactService {
 
   public allContacts$ = new BehaviorSubject<Contact[]>([]);
-  public favoriteContacts$ = new BehaviorSubject<Contact[]>([]);
 
   constructor() {
     this.updateContactBehaviorSubject();
@@ -32,7 +31,6 @@ export class ContactService {
       return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1;
     });
     this.allContacts$.next(orderedContacts);
-    this.favoriteContacts$.next(orderedContacts.filter(c => c.isFavorite));
   }
 
   saveContact(contact: Contact): void {
