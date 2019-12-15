@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ContactListItemComponent } from './contact-list-item.component';
 
 describe('ContactListItemComponent', () => {
@@ -16,6 +15,13 @@ describe('ContactListItemComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ContactListItemComponent);
     component = fixture.componentInstance;
+    component.contact = {
+      id: '123456',
+      isFavorite: false,
+      name: 'Bob McFakeName',
+      email: 'Bob@email.com',
+      phone: '123456789',
+    };
     fixture.detectChanges();
   });
 
