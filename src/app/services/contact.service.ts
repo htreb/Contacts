@@ -14,7 +14,6 @@ export interface Contact {
   providedIn: 'root'
 })
 export class ContactService {
-
   public allContacts$ = new BehaviorSubject<Contact[]>([]);
 
   constructor() {
@@ -26,7 +25,8 @@ export class ContactService {
   }
 
   updateContactBehaviorSubject(): void {
-    const allContacts: Contact[] = JSON.parse(localStorage.getItem('contacts')) || [];
+    const allContacts: Contact[] =
+      JSON.parse(localStorage.getItem('contacts')) || [];
     const orderedContacts: Contact[] = allContacts.sort((a, b) => {
       return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1;
     });
@@ -48,7 +48,9 @@ export class ContactService {
 
   deleteContact(contact: Contact): void {
     if (contact.id) {
-      const contacts: Contact[] = this.allContacts$.value.filter(c => c.id !== contact.id);
+      const contacts: Contact[] = this.allContacts$.value.filter(
+        c => c.id !== contact.id
+      );
       localStorage.setItem('contacts', JSON.stringify(contacts));
       this.updateContactBehaviorSubject();
     }

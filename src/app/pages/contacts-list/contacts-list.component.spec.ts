@@ -11,10 +11,13 @@ describe('ContactsListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactsListComponent, ContactListItemComponent, EditContactComponent ],
+      declarations: [
+        ContactsListComponent,
+        ContactListItemComponent,
+        EditContactComponent
+      ],
       imports: [ReactiveFormsModule]
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

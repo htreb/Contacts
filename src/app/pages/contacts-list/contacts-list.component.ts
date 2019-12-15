@@ -34,7 +34,9 @@ export class ContactsListComponent implements OnInit {
       })
     );
     this.favoriteContacts$ = this.filteredContacts$.pipe(
-      map((orderedContacts: Contact[]) => orderedContacts.filter(c => c.isFavorite))
+      map((orderedContacts: Contact[]) =>
+        orderedContacts.filter(c => c.isFavorite)
+      )
     );
   }
 

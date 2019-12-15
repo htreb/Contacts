@@ -7,10 +7,9 @@ import { Contact, ContactService } from 'src/app/services/contact.service';
   styleUrls: ['./contact-list-item.component.scss']
 })
 export class ContactListItemComponent {
-
   @Input() contact: Contact;
 
-  constructor(private contactService: ContactService) { }
+  constructor(private contactService: ContactService) {}
 
   onFavoriteClicked(ev: MouseEvent) {
     ev.stopPropagation();

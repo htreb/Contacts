@@ -12,7 +12,6 @@ import { ContactService, Contact } from 'src/app/services/contact.service';
   styleUrls: ['./edit-contact.component.scss']
 })
 export class EditContactComponent implements OnInit {
-
   public modalShowing = false;
   public formDisabled = true;
   public contactForm: FormGroup;
@@ -20,21 +19,15 @@ export class EditContactComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private contactService: ContactService
-    ) { }
+  ) {}
 
   ngOnInit(): void {
     this.contactForm = this.fb.group({
       isFavorite: [false],
       name: ['', [Validators.required]],
-      email: [
-        '',
-        [
-          Validators.required,
-          Validators.email
-        ]
-      ],
+      email: ['', [Validators.required, Validators.email]],
       phone: [],
-      id: [],
+      id: []
     });
   }
 
@@ -62,7 +55,9 @@ export class EditContactComponent implements OnInit {
 
   closeModal(force?: boolean): void {
     if (!force && this.contactForm.dirty) {
-      const confirmClose = confirm('You have unsaved changes. Are you sure you want to leave?');
+      const confirmClose = confirm(
+        'You have unsaved changes. Are you sure you want to leave?'
+      );
       if (!confirmClose) {
         return;
       }

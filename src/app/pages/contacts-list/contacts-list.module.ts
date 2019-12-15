@@ -13,17 +13,12 @@ const routes: Routes = [
   }
 ];
 
-
 @NgModule({
   declarations: [
     ContactsListComponent,
     EditContactComponent,
     ContactListItemComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    ReactiveFormsModule
-  ]
+  imports: [CommonModule, RouterModule.forChild(routes), ReactiveFormsModule]
 })
-export class ContactsListModule { }
+export class ContactsListModule {}

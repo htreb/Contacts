@@ -1,60 +1,59 @@
-<div *ngIf="modalShowing" class='modal-blocker' (click)="closeModal()">
-    <div class='modal-container' (click)=modalClicked($event)>
-        <form [formGroup]="contactForm" class='form'>
-            <div class='header-btns' [class.disabled]='formDisabled'>
-                <div class="icon delete" (click)="deleteContact()"></div>
-                <div
-                    class='icon favorite'
-                    [class.selected]="isFavorite.value"
-                    (click)="toggleFavorite()"
-                ></div>
-            </div>
+<div *ngIf="modalShowing" class="modal-blocker" (click)="closeModal()">
+  <div class="modal-container" (click)="modalClicked($event)">
+    <form [formGroup]="contactForm" class="form">
+      <div class="header-btns" [class.disabled]="formDisabled">
+        <div class="icon delete" (click)="deleteContact()"></div>
+        <div
+          class="icon favorite"
+          [class.selected]="isFavorite.value"
+          (click)="toggleFavorite()"
+        ></div>
+      </div>
 
-            <input
-                type="text"
-                placeholder="Name"
-                formControlName="name"
-                [attr.disabled]="formDisabled ? '' : null"
-                autofocus
-            >
-            <div class='error-message' [class.show]='name.dirty && name.invalid'>Name required</div>
-            <input
-                type="email"
-                placeholder="Email"
-                formControlName="email"
-                [attr.disabled]="formDisabled ? '' : null"
-            >
-            <div
-                class='error-message'
-                [class.show]='email.dirty && email.invalid'
-            >
-                {{ email.errors && email.errors['required'] ? 'Email required' : 'Invalid email' }}
-            </div>
-            <input
-                type="tel"
-                placeholder="Phone"
-                formControlName="phone"
-                [attr.disabled]="formDisabled ? '' : null"
-            >
-        </form>
+      <input
+        type="text"
+        placeholder="Name"
+        formControlName="name"
+        [attr.disabled]="formDisabled ? '' : null"
+        autofocus
+      />
+      <div class="error-message" [class.show]="name.dirty && name.invalid">
+        Name required
+      </div>
+      <input
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+        [attr.disabled]="formDisabled ? '' : null"
+      />
+      <div class="error-message" [class.show]="email.dirty && email.invalid">
+        {{
+          email.errors && email.errors["required"]
+            ? "Email required"
+            : "Invalid email"
+        }}
+      </div>
+      <input
+        type="tel"
+        placeholder="Phone"
+        formControlName="phone"
+        [attr.disabled]="formDisabled ? '' : null"
+      />
+    </form>
 
-        <div class='footer-btns'>
-            <button
-                class='footer-btn secondary'
-                (click)="closeModal()"
-            >Close</button>
-            <button
-                *ngIf="formDisabled"
-                class='footer-btn'
-                (click)="onEdit()"
-            >Edit</button>
-            <button
-                *ngIf="!formDisabled"
-                [attr.disabled]="contactForm.invalid ? '' : null"
-                class='footer-btn'
-                (click)="onSave()"
-            >Save</button>
-        </div>
-
+    <div class="footer-btns">
+      <button class="footer-btn secondary" (click)="closeModal()">Close</button>
+      <button *ngIf="formDisabled" class="footer-btn" (click)="onEdit()">
+        Edit
+      </button>
+      <button
+        *ngIf="!formDisabled"
+        [attr.disabled]="contactForm.invalid ? '' : null"
+        class="footer-btn"
+        (click)="onSave()"
+      >
+        Save
+      </button>
     </div>
+  </div>
 </div>

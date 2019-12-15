@@ -7,9 +7,8 @@ describe('ContactListItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactListItemComponent ]
-    })
-    .compileComponents();
+      declarations: [ContactListItemComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -20,7 +19,7 @@ describe('ContactListItemComponent', () => {
       isFavorite: false,
       name: 'Bob McFakeName',
       email: 'Bob@email.com',
-      phone: '123456789',
+      phone: '123456789'
     };
     fixture.detectChanges();
   });

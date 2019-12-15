@@ -1,67 +1,66 @@
 .modal-blocker {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0,0,0,0.9);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  .modal-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+    flex-direction: column;
+    min-width: 250px;
+    width: 500px;
+    margin: 16px;
+    background: var(--color-secondary);
+    border-radius: 4px;
+    cursor: auto;
+    padding: 16px;
 
-    .modal-container {
-        display: flex;
-        flex-direction: column;
-        min-width: 250px;
-        width: 500px;
-        margin: 16px;
-        background: var(--color-secondary);
-        border-radius: 4px;
-        cursor: auto;
-        padding: 16px;
+    .header-btns {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
 
-        .header-btns {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 16px;
-
-            &.disabled {
-                opacity: 0.5;
-            }
-        }
-
-
-        .form {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-
-            .error-message {
-                visibility: hidden;
-                color: var(--color-danger);
-                text-align: center;
-                height: 30px;
-                margin: 5px;
-
-                &.show {
-                    visibility: visible;
-                }
-            }
-
-            input {
-                font-size: 1.5em;
-            }
-        }
-
-        .footer-btns {
-            display: flex;
-            margin-top: 16px;
-
-            .footer-btn {
-                flex: 1;
-                margin: 5px;
-            }
-        }
+      &.disabled {
+        opacity: 0.5;
+      }
     }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      .error-message {
+        visibility: hidden;
+        color: var(--color-danger);
+        text-align: center;
+        height: 30px;
+        margin: 5px;
+
+        &.show {
+          visibility: visible;
+        }
+      }
+
+      input {
+        font-size: 1.5em;
+      }
+    }
+
+    .footer-btns {
+      display: flex;
+      margin-top: 16px;
+
+      .footer-btn {
+        flex: 1;
+        margin: 5px;
+      }
+    }
+  }
 }
