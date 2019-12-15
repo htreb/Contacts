@@ -60,7 +60,13 @@ export class EditContactComponent implements OnInit {
     this.modalShowing = true;
   }
 
-  closeModal(): void {
+  closeModal(force?: boolean): void {
+    if (!force && this.contactForm.dirty) {
+      const confirmClose = confirm('You have unsaved changes. Are you sure you want to leave?');
+      if (!confirmClose) {
+        return;
+      }
+    }
     this.modalShowing = false;
     this.formDisabled = true;
     this.contactForm.reset();
@@ -78,6 +84,7 @@ export class EditContactComponent implements OnInit {
       this.contactForm.patchValue({
         isFavorite: !this.isFavorite.value
       });
+      this.isFavorite.markAsDirty();
     }
   }
 
@@ -86,7 +93,7 @@ export class EditContactComponent implements OnInit {
       return;
     } else {
       this.contactService.deleteContact(this.contactForm.value);
-      this.closeModal();
+      this.closeModal(true);
     }
   }
 
@@ -99,7 +106,7 @@ export class EditContactComponent implements OnInit {
       return;
     } else {
       this.contactService.saveContact(this.contactForm.value);
-      this.closeModal();
+      this.closeModal(true);
     }
   }
 }
