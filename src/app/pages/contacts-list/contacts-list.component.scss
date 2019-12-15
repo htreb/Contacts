@@ -5,9 +5,13 @@
 
     .search-box {
         margin: 50px 0px;
-        font-size: 2em;
         display: flex;
         background: var(--color-input);
+        border-radius: 4px;
+
+        .search-input {
+            font-size: 2em;
+        }
 
         .clear-search {
             background: initial;
@@ -17,6 +21,7 @@
     .title {
         font-size: 3em;
         opacity: 0.2;
+        margin: 16px 0px
     }
 
     .favorites-list {
