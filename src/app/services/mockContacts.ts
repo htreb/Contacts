@@ -11,14 +11,14 @@ export const mockContacts = [
         name: 'Purcell',
         email: 'pcarden1@prnewswire.com',
         phone: '969 726 9567',
-        isFavorite: true,
+        isFavorite: false,
         id: 904408753
     },
     {
         name: 'Dulcinea',
         email: 'dhellin2@fastcompany.com',
         phone: '772 604 5410',
-        isFavorite: true,
+        isFavorite: false,
         id: 643917249
     },
     {
@@ -53,14 +53,14 @@ export const mockContacts = [
         name: 'Callie',
         email: 'cdainter7@flickr.com',
         phone: '395 226 9506',
-        isFavorite: true,
+        isFavorite: false,
         id: 952483464
     },
     {
         name: 'D\'arcy',
         email: 'daldersley8@facebook.com',
         phone: '604 345 4744',
-        isFavorite: true,
+        isFavorite: false,
         id: 89215911
     },
     {
@@ -88,21 +88,21 @@ export const mockContacts = [
         name: 'Petronilla',
         email: 'pubeec@simplemachines.org',
         phone: '744 695 2723',
-        isFavorite: true,
+        isFavorite: false,
         id: 454580913
     },
     {
         name: 'Melosa',
         email: 'meverexd@theguardian.com',
         phone: '793 362 2439',
-        isFavorite: true,
+        isFavorite: false,
         id: 795259075
     },
     {
         name: 'Kurt',
         email: 'kvachere@economist.com',
         phone: '114 567 4526',
-        isFavorite: true,
+        isFavorite: false,
         id: 281581703
     },
     {
@@ -123,28 +123,28 @@ export const mockContacts = [
         name: 'Rafaello',
         email: 'rwharmbyh@people.com.cn',
         phone: '715 219 0893',
-        isFavorite: true,
+        isFavorite: false,
         id: 348141035
     },
     {
         name: 'Jerrylee',
         email: 'jklimasi@stumbleupon.com',
         phone: '545 380 5477',
-        isFavorite: true,
+        isFavorite: false,
         id: 536567359
     },
     {
         name: 'Giffer',
         email: 'gmangenotj@telegraph.co.uk',
         phone: '343 845 4372',
-        isFavorite: true,
+        isFavorite: false,
         id: 118254384
     },
     {
         name: 'Noel',
         email: 'nhoutenk@microsoft.com',
         phone: '344 562 6232',
-        isFavorite: true,
+        isFavorite: false,
         id: 81022785
     },
     {
@@ -179,7 +179,7 @@ export const mockContacts = [
         name: 'Edlin',
         email: 'egrigorip@businessinsider.com',
         phone: '860 228 3111',
-        isFavorite: true,
+        isFavorite: false,
         id: 59693679
     },
     {
@@ -193,7 +193,7 @@ export const mockContacts = [
         name: 'Brier',
         email: 'bmcqueenr@msu.edu',
         phone: '924 288 5443',
-        isFavorite: true,
+        isFavorite: false,
         id: 228545897
     },
     {
@@ -284,21 +284,21 @@ export const mockContacts = [
         name: 'Davey',
         email: 'dbarnby14@si.edu',
         phone: '562 817 1755',
-        isFavorite: true,
+        isFavorite: false,
         id: 547643302
     },
     {
         name: 'Laurie',
         email: 'ldressell15@barnesandnoble.com',
         phone: '982 250 4693',
-        isFavorite: true,
+        isFavorite: false,
         id: 629705159
     },
     {
         name: 'Lavina',
         email: 'lolyonov16@google.cn',
         phone: '271 454 0268',
-        isFavorite: true,
+        isFavorite: false,
         id: 773759247
     },
     {
@@ -312,21 +312,21 @@ export const mockContacts = [
         name: 'Zaria',
         email: 'zmollen18@geocities.com',
         phone: '775 662 2937',
-        isFavorite: true,
+        isFavorite: false,
         id: 947577970
     },
     {
         name: 'Kandy',
         email: 'kraywood19@guardian.co.uk',
         phone: '288 436 8976',
-        isFavorite: true,
+        isFavorite: false,
         id: 856535666
     },
     {
         name: 'Chase',
         email: 'cschubuser1a@topsy.com',
         phone: '958 643 2734',
-        isFavorite: true,
+        isFavorite: false,
         id: 891847089
     },
     {
