@@ -53,6 +53,9 @@ export class EditContactComponent implements OnInit {
   openModal(contact?: Contact): void {
     if (contact) {
       this.contactForm.setValue(contact);
+    } else {
+      // with new contact no need to disable the form
+      this.formDisabled = false;
     }
     this.modalShowing = true;
   }
