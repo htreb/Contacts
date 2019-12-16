@@ -24,13 +24,13 @@ export class ContactsListComponent implements OnInit {
       this.searchTerm$
     ]).pipe(
       map(([allContacts, searchTerm]) => {
-        // By stringifying the contact we can easily search all fields: name, email, phone... in one search;
-        return allContacts.filter(
-          c =>
-            JSON.stringify(c)
-              .toLowerCase()
-              .indexOf(searchTerm.toLowerCase()) > -1
-        );
+        return allContacts.filter((c: Contact) => {
+          return (
+            c.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 ||
+            c.email.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 ||
+            c.phone.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1
+          );
+        });
       })
     );
     this.favoriteContacts$ = this.filteredContacts$.pipe(
