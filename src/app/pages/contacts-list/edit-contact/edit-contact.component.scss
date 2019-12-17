@@ -24,7 +24,7 @@
     .header-btns {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 16px;
+      margin-bottom: 40px;
 
       &.disabled {
         opacity: 0.5;
@@ -55,7 +55,7 @@
 
     .footer-btns {
       display: flex;
-      margin-top: 16px;
+      margin-top: 40px;
 
       .footer-btn {
         flex: 1;
