@@ -1,34 +1,31 @@
-#Project to meet the following requirements:
+# Project to meet the following requirements:
 
 The project requirements:
 
 The user should be able to add the contact information where:
-name - is required
-email - is required
-phone - optional
-User should be able to favorite the contact.
-User should be able to see the list of all contacts and list of favorite contacts
-In the contacts list, the user should be able to toggle "favorite" on and off. If the contact was unfavorited, it should disappear from the list of favorite contacts.
-You should be able to modify existing contact.
-The data should be persistent so you might want to use the localStore for simplicity.
+
+- name - is required
+- email - is required
+- phone - optional
+- User should be able to favorite the contact.
+- User should be able to see the list of all contacts and list of favorite contacts
+- In the contacts list, the user should be able to toggle "favorite" on and off. If the contact was unfavorited, it should disappear from the list of 
+favorite contacts.
+- You should be able to modify existing contact.
+- The data should be persistent so you might want to use the localStore for simplicity.
 
 Tech stack:
 
-You can use the language of your choice but we would prefer the TypeScript.
-You can use any framework of your choice.
-Please, showcase us some CSS knowledge. You can use any preprocessors like SCSS, LESS or others.
+- You can use the language of your choice but we would prefer the TypeScript.
+- You can use any framework of your choice.
+- Please, showcase us some CSS knowledge. You can use any preprocessors like SCSS, LESS or others.
 
 Things which we will care about are:
 
-The source code quality. It should be well formatted and easy to review
+- The source code quality. It should be well formatted and easy to review
 The UI. The application should look nice (subjectively) and easy to use. Ideally mobile friendly.
-The form fields validation
-Commits quality - Commits titles should follow the angular conventions. Each logical task should be in a separate commit.
-Configured linter would be welcome but not required
-Some unit and/or e2e tests are welcome but not required
-
-
-
+- The form fields validation
+- Commits quality - Commits titles should follow the angular conventions. Each logical task should be in a separate commit.
 
 # ContactsApp
 
